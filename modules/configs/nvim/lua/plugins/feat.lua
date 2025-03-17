@@ -37,7 +37,7 @@ return {
                         disable = false,
                         provider = "googleai",
                         chat = true,
-                        command = false,
+                        command = true,
                         model = { model = "gemini-2.0-flash" },
                         system_prompt = "You are a general AI assistant.\n\n"
                             .. "The user provided the additional info about how they would like you to respond:\n\n"
