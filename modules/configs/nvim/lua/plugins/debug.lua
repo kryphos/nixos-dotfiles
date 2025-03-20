@@ -9,6 +9,8 @@ return {
             require("nvim-dap-virtual-text").setup()
             local dap, dapui = require("dap"), require("dapui")
 
+            dap.set_log_level(dap.log_levels.TRACE)
+
             dapui.setup({
                 layouts = { {
                     elements = { {
@@ -45,7 +47,7 @@ return {
 
             dap.adapters.lldb = {
                 type = "executable",
-                command = "lldb",
+                command = "/run/current-system/sw/bin/lldb",
                 name = "lldb"
             }
 
