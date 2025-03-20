@@ -21,11 +21,6 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,7 +39,6 @@
       home-manager,
       nix-ld,
       nixos-hardware,
-      nixos-wsl,
       nixpkgs,
       nur,
       spicetify-nix,
@@ -57,7 +51,6 @@
 
       commonModules = [
         disko.nixosModules.disko
-        nixos-wsl.nixosModules.default
         nix-ld.nixosModules.nix-ld
         home-manager.nixosModules.default
         spicetify-nix.nixosModules.default
