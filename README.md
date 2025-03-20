@@ -9,7 +9,7 @@
 <!--./install.sh /dev/<drive>-->
 <!--```-->
 
-Use the graphical installer to install NixOS. On the new system then run:
+Use the graphical installer to install NixOS. On the new system then run inside `nix-shell -p wget git`:
 
 ```shell
 wget https://raw.githubusercontent.com/kryphos/nixos-dotfiles/refs/heads/master/setup.sh

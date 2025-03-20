@@ -63,7 +63,7 @@
     pipewire
     pitivi
     protonup
-    pulseaudio-ctl
+    pulseaudio
     qemu_full
     r2modman
     rose-pine-cursor
@@ -84,6 +84,7 @@
     wireshark
     wlogout
     wofi
+    xorg.xeyes
     xournalpp
     xwayland
     zed-editor
