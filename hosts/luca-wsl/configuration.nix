@@ -5,11 +5,6 @@ inputs@{ ... }:
     ../../modules/system/profiles/wsl.nix
   ];
 
-  wsl = {
-    enable = false;
-    defaultUser = "luca";
-  };
-
   home-manager = {
     backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };

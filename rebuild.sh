@@ -13,7 +13,7 @@ git -P diff -U0
 echo "NixOS Rebuilding..."
 git add .
 
-sudo nixos-rebuild switch --upgrade --flake .?submodules=1#$(hostname) --show-trace \
+sudo nixos-rebuild switch --impure --upgrade --flake .?submodules=1#$(hostname) --show-trace \
     || (
         echo "NixOS Rebuild Failed!" \
         && notify-send -e "NixOS Rebuild Failed!" --icon=dialog-error \

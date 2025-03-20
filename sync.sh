@@ -9,7 +9,7 @@ git submodule update --init --recursive
 
 echo "NixOS Syncing..."
 
-sudo nixos-rebuild switch --upgrade --flake .?submodules=1#$(hostname) \
+sudo nixos-rebuild switch --impure --upgrade --flake .?submodules=1#$(hostname) \
     || (
         echo "NixOS Sync Failed!" \
         && notify-send -e "NixOS Sync Failed!" --icon=dialog-error \

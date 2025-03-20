@@ -13,7 +13,7 @@ git config --global credential.helper store
 git clone https://github.com/kryphos/nixos-dotfiles.git ~/code/nixos-dotfiles --recursive
 
 pushd ~/code/nixos-dotfiles
-sudo nixos-rebuild switch --flake .?submodules=1#$name
+sudo nixos-rebuild switch --impure --flake .?submodules=1#$name
 popd
 
 rustup default stable
