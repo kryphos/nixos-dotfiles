@@ -39,6 +39,7 @@
     cmatrix
     coreutils
     curl
+    dconf
     docker
     docker-buildx
     docker-compose
@@ -49,8 +50,8 @@
     fastfetch
     fcrackzip
     fd
-    file
     ffmpeg-full
+    file
     fzf
     gcc
     gdb
