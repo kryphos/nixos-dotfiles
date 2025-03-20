@@ -9,7 +9,7 @@ return {
             require("nvim-dap-virtual-text").setup()
             local dap, dapui = require("dap"), require("dapui")
 
-            dap.set_log_level(dap.log_levels.TRACE)
+            dap.set_log_level(vim.log.levels.TRACE)
 
             dapui.setup({
                 layouts = { {
