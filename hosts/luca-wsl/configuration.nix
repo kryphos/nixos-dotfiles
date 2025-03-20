@@ -1,7 +1,11 @@
 inputs@{ ... }:
 {
   imports = [ ../../modules/system/profiles/headless.nix ];
-  wsl.enable = true;
+
+  wsl = {
+    enable = false;
+    defaultUser = "luca";
+  };
 
   home-manager = {
     backupFileExtension = "backup";
