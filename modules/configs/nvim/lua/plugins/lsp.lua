@@ -2,7 +2,7 @@ local installed = {
     "bash-language-server",
     "bibtex-tidy",
     "black",
-    -- "clangd",
+    "clangd",
     "css-lsp",
     "cssmodules-language-server",
     "docker_compose_language_service",
