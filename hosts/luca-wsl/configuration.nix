@@ -2,7 +2,7 @@ inputs@{ ... }:
 {
   imports = [
     <nixos-wsl/modules>
-    ../../modules/system/profiles/headless.nix
+    ../../modules/system/profiles/wsl.nix
   ];
 
   wsl = {
