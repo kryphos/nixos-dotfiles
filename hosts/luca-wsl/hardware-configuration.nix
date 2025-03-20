@@ -6,7 +6,7 @@
 {
   fileSystems."/" = {
     device = "/dev/sdc";
-    fsType = "ext4";
+    fsType = "ext2";
   };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

@@ -10,9 +10,8 @@ inputs@{ ... }:
     defaultUser = "luca";
   };
 
-  # this doesnt actually do anything but has to be here
   boot.loader.grub = {
-    device = "/dev/sdc";
+    enable = false;
   };
 
   home-manager = {
