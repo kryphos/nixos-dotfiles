@@ -21,7 +21,6 @@
     blender
     brightnessctl
     candy-icons
-    chromium
     copyq
     cups
     discord
