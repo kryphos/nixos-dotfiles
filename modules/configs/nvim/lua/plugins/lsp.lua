@@ -2,7 +2,6 @@ local installed = {
     "bash-language-server",
     "bibtex-tidy",
     "black",
-    "clangd",
     "css-lsp",
     "cssmodules-language-server",
     "docker_compose_language_service",
@@ -97,26 +96,17 @@ return {
                 function(server_name)
                     require("lspconfig")[server_name].setup {}
                 end,
-
-                ["clangd"] = function()
-                    require("lspconfig").clangd.setup({
-                        cmd = {
-                            "clangd",
-                            "--offset-encoding=utf-16",
-                            "--background-index",
-                            "--suggest-missing-includes",
-                        },
-                    })
-                end,
             }
 
-            require("lspconfig").opts = {
-                servers = {
-                    clangd = {
-                        mason = false,
-                    }
-                }
-            }
+            -- dont use the clangd from mason cuz it cant find system headers on nixos
+            require("lspconfig").clangd.setup({
+                cmd = {
+                    "clangd",
+                    "--offset-encoding=utf-16",
+                    "--background-index",
+                    "--suggest-missing-includes",
+                },
+            })
         end,
     },
 
