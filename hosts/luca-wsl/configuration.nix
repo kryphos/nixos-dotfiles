@@ -1,6 +1,9 @@
 inputs@{ ... }:
 {
-  imports = [ ../../modules/system/profiles/headless.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/system/profiles/headless.nix
+  ];
 
   wsl = {
     enable = false;
