@@ -1,6 +1,10 @@
 -- ctrl + s for saving
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
 
+-- commenting
+vim.keymap.set("n", "<leader>x", "gcl")
+vim.keymap.set("v", "<leader>x", "gc")
+
 -- m for running the compile command
 vim.keymap.set("n", "m", "<cmd>belowright Compile<CR>")
 
