@@ -103,9 +103,19 @@ return {
                         cmd = {
                             "clangd",
                             "--offset-encoding=utf-16",
+                            "--background-index",
+                            "--suggest-missing-includes",
                         },
                     })
                 end,
+            }
+
+            require("lspconfig").opts = {
+                servers = {
+                    clangd = {
+                        mason = false,
+                    }
+                }
             }
         end,
     },

@@ -2,8 +2,8 @@
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
 
 -- commenting
-vim.keymap.set("n", "<leader>x", "gcl")
-vim.keymap.set("v", "<leader>x", "gc")
+vim.keymap.set("n", "<leader>x", "<cmd>normal gcc<CR>")
+vim.keymap.set("v", "<leader>x", "<ESC><cmd>normal gvgc<CR>")
 
 -- m for running the compile command
 vim.keymap.set("n", "m", "<cmd>belowright Compile<CR>")
@@ -27,11 +27,11 @@ vim.keymap.set("n", "<C-S-t>", "<cmd>lua require('trouble').prev({ skip_groups =
 vim.keymap.set("n", "<M-t>", "<cmd>terminal <CR>")
 vim.keymap.set("n", "<M-x>", "<cmd>tabclose <CR>")
 vim.keymap.set("n", "<M-c>", "<cmd>tabnew <CR>")
-vim.keymap.set("n", "<M-1>", ":tabn 1<CR>")
-vim.keymap.set("n", "<M-2>", ":tabn 2<CR>")
-vim.keymap.set("n", "<M-3>", ":tabn 3<CR>")
-vim.keymap.set("n", "<M-4>", ":tabn 4<CR>")
-vim.keymap.set("n", "<M-5>", ":tabn 5<CR>")
+vim.keymap.set("n", "<M-1>", "<cmd>tabn 1<CR>")
+vim.keymap.set("n", "<M-2>", "<cmd>tabn 2<CR>")
+vim.keymap.set("n", "<M-3>", "<cmd>tabn 3<CR>")
+vim.keymap.set("n", "<M-4>", "<cmd>tabn 4<CR>")
+vim.keymap.set("n", "<M-5>", "<cmd>tabn 5<CR>")
 
 -- resize splits
 vim.keymap.set("n", "<C-h>", require("smart-splits").resize_left)
@@ -113,10 +113,10 @@ vim.keymap.set("v", "<leader>cp", ":<C-u>'<,'>GpPopup<cr>")
 vim.keymap.set("v", "<leader>cr", ":<C-u>'<,'>GpRewrite<cr>")
 
 -- debugging
-vim.keymap.set("n", "<leader>dt", ":lua require('dapui').toggle()<CR>")
-vim.keymap.set("n", "<leader>b", ":DapToggleBreakpoint<CR>")
-vim.keymap.set("n", "<leader>B", ":lua require('dap').set_breakpoint(vim.fn.input('Condition: '))<CR>")
-vim.keymap.set("n", "<F5>", ":DapContinue<CR>")
-vim.keymap.set("n", "<F10>", ":DapStepOver<CR>")
-vim.keymap.set("n", "<F11>", ":DapStepInto<CR>")
-vim.keymap.set("n", "<F12>", ":DapStepOut<CR>")
+vim.keymap.set("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>")
+vim.keymap.set("n", "<leader>b", "<cmd>DapToggleBreakpoint<CR>")
+vim.keymap.set("n", "<leader>B", "<cmd>ua require('dap').set_breakpoint(vim.fn.input('Condition: '))<CR>")
+vim.keymap.set("n", "<F5>", "<cmd>DapContinue<CR>")
+vim.keymap.set("n", "<F10>", "<cmd>DapStepOver<CR>")
+vim.keymap.set("n", "<F11>", "<cmd>DapStepInto<CR>")
+vim.keymap.set("n", "<F12>", "<cmd>DapStepOut<CR>")

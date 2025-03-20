@@ -58,7 +58,7 @@ return {
                         return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
                     end,
                     cwd = "${workspaceFolder}",
-                    stopOnEntry = false,
+                    stopOnEntry = true,
                     args = {},
                 },
             }
@@ -70,10 +70,11 @@ return {
                 type = "lldb",
                 request = "launch",
                 program = function()
+                    vim.fn.system("cargo build --debug")
                     return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
                 end,
                 cwd = "${workspaceFolder}",
-                stopOnEntry = false,
+                stopOnEntry = true,
                 args = {},
                 initCommands = function()
                     -- Find out where to look for the pretty printer Python module

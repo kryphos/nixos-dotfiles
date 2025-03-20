@@ -32,6 +32,7 @@
     cargo-make
     cgdb
     clang
+    clang-tools
     cloc
     cmake
     cmatrix
