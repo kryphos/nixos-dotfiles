@@ -1,5 +1,4 @@
 {
-  lib,
   pkgs,
   spicetify-nix,
   ...
@@ -64,6 +63,7 @@
     pipewire
     pitivi
     protonup
+    pulseaudio-ctl
     qemu_full
     r2modman
     rose-pine-cursor

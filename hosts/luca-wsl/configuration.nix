@@ -1,17 +1,13 @@
 inputs@{ ... }:
 {
   imports = [
-    ./hardware-configuration.nix
+    <nixos-wsl/modules>
     ../../modules/system/profiles/headless.nix
   ];
 
   wsl = {
     enable = false;
     defaultUser = "luca";
-  };
-
-  boot.loader.grub = {
-    enable = false;
   };
 
   home-manager = {
