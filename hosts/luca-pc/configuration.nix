@@ -1,4 +1,4 @@
-inputs@{ ... }:
+inputs@{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -7,6 +7,20 @@ inputs@{ ... }:
 
   boot.loader.systemd-boot = {
     enable = true;
+  };
+
+  users.users = {
+    "luca" = {
+      isNormalUser = true;
+      home = "/home/luca";
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+        "docker"
+        "libvirtd"
+      ];
+      shell = pkgs.zsh;
+    };
   };
 
   home-manager = {

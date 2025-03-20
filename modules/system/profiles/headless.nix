@@ -6,6 +6,5 @@
     ../nix.nix
     ../security.nix
     ../software_tui.nix
-    ../users.nix
   ];
 }

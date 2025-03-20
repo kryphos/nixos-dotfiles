@@ -9,6 +9,5 @@
     ../software_gui.nix
     ../software_tui.nix
     ../sound.nix
-    ../users.nix
   ];
 }

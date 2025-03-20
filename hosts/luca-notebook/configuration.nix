@@ -1,4 +1,4 @@
-inputs@{ ... }:
+inputs@{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -8,6 +8,20 @@ inputs@{ ... }:
   boot.loader.grub = {
     enable = true;
     device = "/dev/nvme0n1";
+  };
+
+  users.users = {
+    "luca" = {
+      isNormalUser = true;
+      home = "/home/luca";
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+        "docker"
+        "libvirtd"
+      ];
+      shell = pkgs.zsh;
+    };
   };
 
   home-manager = {
