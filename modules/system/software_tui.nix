@@ -14,6 +14,7 @@
       openssl
       postgresql.lib
       stdenv.cc.cc
+      stdenv.cc.cc.lib
     ];
   };
 
