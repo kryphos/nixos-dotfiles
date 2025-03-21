@@ -22,7 +22,7 @@ return {
                         size = 0.25
                     } },
                     position = "left",
-                    size = 50
+                    size = 40
                 }, {
                     elements = { {
                         id = "repl",
@@ -48,6 +48,17 @@ return {
                 command = "gdb",
                 args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
             }
+
+            dap.adapters.python = function(cb)
+                cb({
+                    type = 'executable',
+                    command = 'python',
+                    args = { '-m', 'debugpy.adapter' },
+                    options = {
+                        source_filetype = 'python',
+                    },
+                })
+            end
 
             dap.configurations.c = {
                 {
@@ -75,6 +86,19 @@ return {
                 cwd = "${workspaceFolder}",
                 stopAtBeginningOfMainSubprogram = true,
             } }
+
+            dap.configurations.python = { {
+                name = "Launch",
+                type = 'python',
+                request = 'launch',
+                program = function()
+                    return vim.fn.input("Path to main file: ", vim.fn.getcwd() .. "/", "file")
+                end,
+                pythonPath = function()
+                    return "/run/current-system/sw/bin/python"
+                end,
+            },
+            }
         end
     },
 }

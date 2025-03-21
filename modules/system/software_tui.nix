@@ -75,7 +75,6 @@
     lazydocker
     lazygit
     lcov
-    lldb
     llvmPackages.bintools
     lolcat
     lua51Packages.lua
@@ -105,6 +104,7 @@
     postgresql
     python312Full
     python312Packages.black
+    python312Packages.debugpy
     python312Packages.ipython
     python312Packages.isort
     qmk
