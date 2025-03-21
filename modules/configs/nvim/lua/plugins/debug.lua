@@ -43,23 +43,23 @@ return {
                 dapui.close()
             end
 
-            dap.adapters.lldb = {
+            dap.adapters.gdb = {
                 type = "executable",
-                command = "/run/current-system/sw/bin/lldb",
-                name = "lldb"
+                command = "gdb",
+                args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
             }
 
             dap.configurations.c = {
                 {
                     name = "Launch",
-                    type = "lldb",
+                    type = "gdb",
                     request = "launch",
                     program = function()
+                        print(vim.fn.system("which gdb"))
                         return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
                     end,
                     cwd = "${workspaceFolder}",
-                    stopOnEntry = true,
-                    args = {},
+                    stopAtBeginningOfMainSubprogram = false,
                 },
             }
 
@@ -67,35 +67,14 @@ return {
 
             dap.configurations.rust = { {
                 name = "Launch",
-                type = "lldb",
+                type = "gdb",
                 request = "launch",
                 program = function()
                     vim.fn.system("cargo build --debug")
                     return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
                 end,
                 cwd = "${workspaceFolder}",
-                stopOnEntry = true,
-                args = {},
-                initCommands = function()
-                    -- Find out where to look for the pretty printer Python module
-                    local rustc_sysroot = vim.fn.trim(vim.fn.system("rustc --print sysroot"))
-
-                    local script_import = 'command script import "' ..
-                        rustc_sysroot .. '/lib/rustlib/etc/lldb_lookup.py"'
-                    local commands_file = rustc_sysroot .. "/lib/rustlib/etc/lldb_commands"
-
-                    local commands = {}
-                    local file = io.open(commands_file, "r")
-                    if file then
-                        for line in file:lines() do
-                            table.insert(commands, line)
-                        end
-                        file:close()
-                    end
-                    table.insert(commands, 1, script_import)
-
-                    return commands
-                end,
+                stopAtBeginningOfMainSubprogram = false,
             } }
         end
     },

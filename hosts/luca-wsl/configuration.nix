@@ -5,8 +5,10 @@ inputs@{ ... }:
     ../../modules/system/profiles/wsl.nix
   ];
 
-  wsl.enable = true;
-  wsl.defaultUser = "luca";
+  wsl = {
+    enable = true;
+    defaultUser = "luca";
+  };
 
   home-manager = {
     backupFileExtension = "backup";

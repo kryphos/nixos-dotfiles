@@ -42,9 +42,9 @@
             "format": "{2}",
         },
         {
-            "type": "btrfs",
+            "type": "disk",
             "key": "D ",
-            "format": "{5} / {7} {10}",
+            "format": "{name}: {size-used} / {size-total} ({size-percentage})",
         },
         {
             "type": "localip",

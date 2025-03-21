@@ -96,6 +96,7 @@
     ntfs3g
     nushell
     oh-my-zsh
+    onefetch
     opam
     pdftk
     perf-tools
