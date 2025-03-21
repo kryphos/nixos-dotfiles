@@ -91,9 +91,9 @@ return {
                 type = 'python',
                 request = 'launch',
                 program = function()
-                    return vim.fn.expand('%:p')
-                    -- return vim.fn.input("Path to main file: ", vim.fn.getcwd() .. "/", "file")
+                    return vim.fn.input("Path to main file: ", vim.fn.getcwd() .. "/", "file")
                 end,
+                cwd = "${workspaceFolder}",
                 pythonPath = function()
                     local cwd = vim.fn.getcwd()
                     if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
