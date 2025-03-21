@@ -79,7 +79,7 @@ return {
                 type = "gdb",
                 request = "launch",
                 program = function()
-                    vim.fn.system("cargo build --debug")
+                    vim.fn.system("cargo build")
                     return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
                 end,
                 cwd = "${workspaceFolder}",
