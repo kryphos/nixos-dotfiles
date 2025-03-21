@@ -12,6 +12,7 @@
       libgcc
       libz
       openssl
+      pam
       postgresql.lib
       stdenv.cc.cc
       stdenv.cc.cc.lib
