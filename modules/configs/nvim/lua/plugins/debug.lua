@@ -91,10 +91,18 @@ return {
                 type = 'python',
                 request = 'launch',
                 program = function()
-                    return vim.fn.input("Path to main file: ", vim.fn.getcwd() .. "/", "file")
+                    return vim.fn.expand('%:p')
+                    -- return vim.fn.input("Path to main file: ", vim.fn.getcwd() .. "/", "file")
                 end,
                 pythonPath = function()
-                    return "/run/current-system/sw/bin/python"
+                    local cwd = vim.fn.getcwd()
+                    if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
+                        return cwd .. '/venv/bin/python'
+                    elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
+                        return cwd .. '/.venv/bin/python'
+                    else
+                        return "/run/current-system/sw/bin/python"
+                    end
                 end,
             },
             }
