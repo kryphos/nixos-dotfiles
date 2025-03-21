@@ -55,11 +55,10 @@ return {
                     type = "gdb",
                     request = "launch",
                     program = function()
-                        print(vim.fn.system("which gdb"))
                         return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
                     end,
                     cwd = "${workspaceFolder}",
-                    stopAtBeginningOfMainSubprogram = false,
+                    stopAtBeginningOfMainSubprogram = true,
                 },
             }
 
