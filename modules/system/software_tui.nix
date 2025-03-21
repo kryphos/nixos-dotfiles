@@ -90,6 +90,7 @@
     minikube
     mold
     mpg123
+    nasm
     neofetch
     neovim
     ninja
