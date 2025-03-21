@@ -43,6 +43,7 @@
     coreutils
     curl
     dconf
+    direnv
     docker
     docker-buildx
     docker-compose
@@ -182,9 +183,9 @@
         enable = true;
         plugins = [
           "aws"
+          "direnv"
           "docker"
           "docker-compose"
-          "envrc"
           "fzf"
           "git"
           "kubectl"
