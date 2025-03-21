@@ -8,6 +8,7 @@
   programs.nix-ld.dev = {
     enable = true;
     libraries = with pkgs; [
+      libcxx
       libgcc
       libz
       openssl
