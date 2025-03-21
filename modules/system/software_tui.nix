@@ -8,7 +8,6 @@
   programs.nix-ld.dev = {
     enable = true;
     libraries = with pkgs; [
-      autoPatchelfHook
       libcxx
       libgcc
       libz
