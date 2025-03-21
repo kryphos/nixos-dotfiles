@@ -1,6 +1,4 @@
 local installed = {
-    "asm-lsp",
-    "asmfmt",
     "bash-language-server",
     "bibtex-tidy",
     "black",
@@ -117,7 +115,6 @@ return {
         config = function()
             require("conform").setup({
                 formatters_by_ft = {
-                    asm = { "asmfmt" },
                     bib = { "bibtex-tidy" },
                     css = { "prettier" },
                     html = { "prettier" },
