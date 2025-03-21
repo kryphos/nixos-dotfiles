@@ -1,4 +1,6 @@
 local installed = {
+    "asm-lsp",
+    "asmfmt",
     "bash-language-server",
     "bibtex-tidy",
     "black",
@@ -115,13 +117,14 @@ return {
         config = function()
             require("conform").setup({
                 formatters_by_ft = {
-                    python = { "isort", "prettier" },
-                    javascript = { "prettier" },
-                    html = { "prettier" },
-                    css = { "prettier" },
-                    scss = { "prettier" },
-                    latex = { "latexindent" },
+                    asm = { "asmfmt" },
                     bib = { "bibtex-tidy" },
+                    css = { "prettier" },
+                    html = { "prettier" },
+                    javascript = { "prettier" },
+                    latex = { "latexindent" },
+                    python = { "isort", "prettier" },
+                    scss = { "prettier" },
                 },
                 format_on_save = {
                     timeout_ms = 500,
