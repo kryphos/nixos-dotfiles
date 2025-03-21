@@ -22,6 +22,7 @@
   environment.systemPackages = with pkgs; [
     act
     aircrack-ng
+    autoPatchelfHook
     awscli2
     bat
     btop
@@ -183,6 +184,7 @@
           "aws"
           "docker"
           "docker-compose"
+          "envrc"
           "fzf"
           "git"
           "kubectl"
