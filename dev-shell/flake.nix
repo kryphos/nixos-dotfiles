@@ -46,10 +46,8 @@
             '';
 
             packages = with pkgs; [
-              autoPatchelfHook
-              git
-              poetry
-              python312
+              stdenv.cc.cc
+              stdenv.cc.cc.lib
             ];
           };
         }

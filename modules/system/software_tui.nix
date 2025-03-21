@@ -8,12 +8,10 @@
   programs.nix-ld.dev = {
     enable = true;
     libraries = with pkgs; [
-      autoPatchelfHook
       libcxx
       libgcc
       libz
       openssl
-      pam
       postgresql.lib
       stdenv.cc.cc
       stdenv.cc.cc.lib
@@ -24,7 +22,6 @@
   environment.systemPackages = with pkgs; [
     act
     aircrack-ng
-    autoPatchelfHook
     awscli2
     bat
     btop
