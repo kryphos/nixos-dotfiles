@@ -29,7 +29,7 @@ return {
                         size = 1.0
                     } },
                     position = "bottom",
-                    size = 15
+                    size = 10
                 } },
             })
 
@@ -73,7 +73,7 @@ return {
                     return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
                 end,
                 cwd = "${workspaceFolder}",
-                stopAtBeginningOfMainSubprogram = false,
+                stopAtBeginningOfMainSubprogram = true,
             } }
         end
     },
