@@ -59,7 +59,7 @@ return {
                 })
             end
 
-            dap.configurations.c = {
+            dap.configurations.asm = {
                 {
                     name = "Launch",
                     type = "gdb",
@@ -72,7 +72,8 @@ return {
                 },
             }
 
-            dap.configurations.cpp = dap.configurations.c
+            dap.configurations.c = dap.configurations.asm
+            dap.configurations.cpp = dap.configurations.asm
 
             dap.configurations.rust = { {
                 name = "Launch",
