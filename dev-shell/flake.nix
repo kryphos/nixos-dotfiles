@@ -36,10 +36,9 @@
         );
     in
     {
-      formatter = forEachSupportedSystem ({ pkgs }: pkgs.nixfmt-rfc-style);
-
+      formatter = forEachSupportedSystem ({ pkgs, ... }: pkgs.nixfmt-rfc-style);
       devShells = forEachSupportedSystem (
-        { pkgs }:
+        { pkgs, ... }:
         {
           default = pkgs.mkShell rec {
             shellHook = ''
