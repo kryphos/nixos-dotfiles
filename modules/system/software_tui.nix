@@ -25,15 +25,20 @@
     awscli2
     bat
     btop
-    cargo-bootimage
     cargo-cross
     cargo-deny
     cargo-edit
     cargo-expand
     cargo-flamegraph
+    cargo-fuzz
     cargo-info
+    cargo-machete
     cargo-make
+    cargo-shuttle
+    cargo-watch
     cgdb
+    diesel-cli
+    sqlx-cli
     clang
     clang-tools
     cloc
