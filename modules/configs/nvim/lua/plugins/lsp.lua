@@ -99,8 +99,12 @@ return {
 
                 ["rust_analyzer"] = function()
                     require("lspconfig").rust_analyzer.setup({
-                        check = {
-                            command = "clippy",
+                        settings = {
+                            ["rust-analyzer"] = {
+                                check = {
+                                    command = "clippy",
+                                },
+                            },
                         }
                     })
                 end,
