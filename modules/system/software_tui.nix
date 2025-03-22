@@ -1,15 +1,4 @@
-{ lib, pkgs, ... }:
-let
-  libraries = with pkgs; [
-    libcxx
-    libgcc
-    libz
-    openssl
-    postgresql.lib
-    stdenv.cc.cc
-    stdenv.cc.cc.lib
-  ];
-in
+{ pkgs, ... }:
 {
   nixpkgs.config = {
     allowBroken = true;
@@ -18,9 +7,16 @@ in
 
   programs.nix-ld.dev = {
     enable = true;
-    inherit libraries;
+    libraries = with pkgs; [
+      libcxx
+      libgcc
+      libz
+      openssl
+      postgresql.lib
+      stdenv.cc.cc
+      stdenv.cc.cc.lib
+    ];
   };
-  environment.sessionVariables.LD_LIBRARY_PATH = "${lib.makeLibraryPath libraries}";
 
   environment.defaultPackages = [ ];
   environment.systemPackages = with pkgs; [
