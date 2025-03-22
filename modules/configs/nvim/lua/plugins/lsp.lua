@@ -96,7 +96,7 @@ return {
                 function(server_name)
                     require("lspconfig")[server_name].setup {
                         ["rust-analyzer"] = {
-                            checkOnSave = {
+                            check = {
                                 command = "clippy",
                             },
                         },
