@@ -32,6 +32,7 @@
     awscli2
     bat
     btop
+    cargo-bootimage
     cargo-cross
     cargo-deny
     cargo-edit
