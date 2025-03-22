@@ -94,13 +94,15 @@ return {
             require("mason-lspconfig").setup()
             require("mason-lspconfig").setup_handlers {
                 function(server_name)
-                    require("lspconfig")[server_name].setup {
-                        ["rust-analyzer"] = {
-                            check = {
-                                command = "clippy",
-                            },
-                        },
-                    }
+                    require("lspconfig")[server_name].setup {}
+                end,
+
+                ["rust-analyzer"] = function()
+                    require("lspconfig").rust_analyzer.setup({
+                        check = {
+                            command = "clippy",
+                        }
+                    })
                 end,
             }
 
