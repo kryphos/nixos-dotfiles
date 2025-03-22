@@ -97,7 +97,7 @@ return {
                     require("lspconfig")[server_name].setup {}
                 end,
 
-                ["rust-analyzer"] = function()
+                ["rust_analyzer"] = function()
                     require("lspconfig").rust_analyzer.setup({
                         check = {
                             command = "clippy",
