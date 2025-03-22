@@ -8,6 +8,7 @@
   programs.nix-ld.dev = {
     enable = true;
     libraries = with pkgs; [
+      glibc.static
       libcxx
       libgcc
       libiconv
