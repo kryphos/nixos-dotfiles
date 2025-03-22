@@ -37,8 +37,6 @@
     cargo-shuttle
     cargo-watch
     cgdb
-    diesel-cli
-    sqlx-cli
     clang
     clang-tools
     cloc
@@ -47,6 +45,7 @@
     coreutils
     curl
     dconf
+    diesel-cli
     direnv
     docker
     docker-buildx
@@ -70,6 +69,7 @@
     gnutar
     go
     graphviz
+    grub2
     hashcat
     headsetcontrol
     hyperfine
@@ -124,6 +124,7 @@
     rustup
     sox
     sqlite
+    sqlx-cli
     starship
     terraform
     texliveFull
@@ -131,8 +132,8 @@
     tldr
     tmux
     tmux-sessionizer
-    tparted
     tokei
+    tparted
     trash-cli
     unzip
     valgrind
