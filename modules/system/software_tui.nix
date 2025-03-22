@@ -21,6 +21,7 @@
 
   environment.variables = {
     OPENSSL_DEV = pkgs.openssl.dev;
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
 
   environment.defaultPackages = [ ];

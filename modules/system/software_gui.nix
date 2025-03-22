@@ -22,6 +22,7 @@
     candy-icons
     copyq
     cups
+    cutter
     discord
     emacs
     feh
@@ -31,6 +32,7 @@
     gamemode
     gamescope
     gf
+    ghidra
     ghostty
     gimp
     gparted
