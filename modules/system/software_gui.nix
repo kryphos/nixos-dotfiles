@@ -86,6 +86,7 @@
     wireshark
     wlogout
     wofi
+    woomer
     xorg.xeyes
     xournalpp
     xwayland
