@@ -1,4 +1,19 @@
 { pkgs, ... }:
+let
+  libraries = with pkgs; [
+    glibc.static
+    libcxx
+    libgcc
+    libiconv
+    libz
+    openssl
+    postgresql.lib
+    stdenv.cc.cc
+    stdenv.cc.cc.lib
+    waylandpp
+    xorg.libX11.dev
+  ];
+in
 {
   nixpkgs.config = {
     allowBroken = true;
@@ -7,24 +22,13 @@
 
   programs.nix-ld.dev = {
     enable = true;
-    libraries = with pkgs; [
-      glibc.static
-      libcxx
-      libgcc
-      libiconv
-      libz
-      openssl
-      postgresql.lib
-      stdenv.cc.cc
-      stdenv.cc.cc.lib
-      waylandpp
-      xorg.libX11
-    ];
+    inherit libraries;
   };
 
   environment.variables = {
-    OPENSSL_DEV = pkgs.openssl.dev;
-    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+    # OPENSSL_DEV = pkgs.openssl.dev;
+    # PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+    LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath libraries}:\${LD_LIBRARY_PATH}";
   };
 
   environment.defaultPackages = [ ];
