@@ -31,7 +31,7 @@ in
     # OPENSSL_DEV = pkgs.openssl.dev;
     # PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     X11_X11_INCLUDE_PATH = "${pkgs.xorg.libX11.dev}/include";
-    # X11_X11_LIB = "${pkgs.xorg.libX11}/lib";
+    X11_X11_LIB = "${pkgs.xorg.libX11.dev}/lib";
 
     # this is against nix philosophy, but i really cannot be bothered making/loading dev shells for every project
     LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath libraries}:\${LD_LIBRARY_PATH}";
