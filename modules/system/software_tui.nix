@@ -10,7 +10,9 @@ let
     postgresql.lib
     stdenv.cc.cc
     stdenv.cc.cc.lib
+    wayland
     waylandpp
+    xorg.libX11
     xorg.libX11.dev
   ];
 in
@@ -28,6 +30,8 @@ in
   environment.variables = {
     # OPENSSL_DEV = pkgs.openssl.dev;
     # PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+
+    # this is against nix philosophy, but i really cannot be bothered making/loading dev shells for every project
     LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath libraries}:\${LD_LIBRARY_PATH}";
   };
 
