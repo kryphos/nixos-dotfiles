@@ -1,4 +1,21 @@
 { pkgs, ... }:
+let
+  libraries = with pkgs; [
+    glibc.static
+    libcxx
+    libgcc
+    libiconv
+    libz
+    openssl
+    postgresql.lib
+    stdenv.cc.cc
+    stdenv.cc.cc.lib
+    wayland
+    waylandpp
+    xorg.libX11
+    xorg.libX11.dev
+  ];
+in
 {
   nixpkgs.config = {
     allowBroken = true;
@@ -7,21 +24,7 @@
 
   programs.nix-ld.dev = {
     enable = true;
-    libraries = with pkgs; [
-      glibc.static
-      libcxx
-      libgcc
-      libiconv
-      libz
-      openssl
-      postgresql.lib
-      stdenv.cc.cc
-      stdenv.cc.cc.lib
-      wayland
-      waylandpp
-      xorg.libX11
-      xorg.libX11.dev
-    ];
+    inherit libraries;
   };
 
   environment.variables = {
@@ -198,7 +201,7 @@
     zsh = {
       enable = true;
       shellInit = ''
-        export HELLO_WORLD="Hello, World!"
+        export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${pkgs.lib.makeLibraryPath libraries}"
       '';
       ohMyZsh = {
         enable = true;
