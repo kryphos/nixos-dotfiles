@@ -27,8 +27,6 @@
   environment.variables = {
     OPENSSL_DEV = pkgs.openssl.dev;
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
-    X11_X11_INCLUDE_PATH = "${pkgs.xorg.libX11.dev}/include";
-    X11_X11_LIB = "${pkgs.xorg.libX11.dev}/lib";
   };
 
   environment.defaultPackages = [ ];
@@ -199,6 +197,9 @@
     };
     zsh = {
       enable = true;
+      shellInit = ''
+        export HELLO_WORLD="Hello, World!"
+      '';
       ohMyZsh = {
         enable = true;
         plugins = [
