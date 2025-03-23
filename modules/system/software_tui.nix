@@ -17,6 +17,8 @@
       postgresql.lib
       stdenv.cc.cc
       stdenv.cc.cc.lib
+      waylandpp
+      xorg.libX11
     ];
   };
 
