@@ -4,7 +4,7 @@
     ../locale.nix
     ../nix.nix
     ../security.nix
-    ../software_tui.nix
+    ../software.nix
     ../users.nix
   ];
 }

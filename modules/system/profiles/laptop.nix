@@ -7,8 +7,7 @@
     ../nix.nix
     ../power.nix
     ../security.nix
-    ../software_gui.nix
-    ../software_tui.nix
+    ../software.nix
     ../sound.nix
     ../users.nix
   ];
