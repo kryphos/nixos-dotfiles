@@ -28,8 +28,8 @@ in
   };
 
   environment.variables = {
-    # OPENSSL_DEV = pkgs.openssl.dev;
-    # PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+    PKG_CONFIG_PATH = "\$PKG_CONFIG_PATH:${pkgs.openssl.dev}/lib/pkgconfig";
+    OPENSSL_DEV = pkgs.openssl.dev;
   };
 
   environment.defaultPackages = [ ];
