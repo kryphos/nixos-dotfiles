@@ -11,10 +11,11 @@ let
     libz
     openssl
     postgresql.lib
+    raylib
+    sdl3
     stdenv.cc.cc
     stdenv.cc.cc.lib
     wayland
-    waylandpp
     xorg.libX11
     xorg.libX11.dev
     xorg.libXcursor
@@ -112,6 +113,7 @@ in
     ghostty
     gimp
     gitFull
+    glfw
     glib
     gnumake
     gnuplot
@@ -201,7 +203,6 @@ in
     qmk
     r2modman
     ranger
-    raylib
     ripgrep
     rose-pine-cursor
     rose-pine-hyprcursor
