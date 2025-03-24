@@ -14,6 +14,7 @@ let
     waylandpp
     xorg.libX11
     xorg.libX11.dev
+    zlib
   ];
 in
 {
