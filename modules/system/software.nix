@@ -1,10 +1,13 @@
 { pkgs, spicetify-nix, ... }:
 let
   libraries = with pkgs; [
+    glfw
     glibc.static
+    kdePackages.wayland-protocols
     libcxx
     libgcc
     libiconv
+    libxkbcommon
     libz
     openssl
     postgresql.lib
@@ -12,6 +15,7 @@ let
     stdenv.cc.cc.lib
     wayland
     waylandpp
+    wlr-protocols
     xorg.libX11
     xorg.libX11.dev
     zlib
