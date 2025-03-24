@@ -3,6 +3,7 @@ let
   libraries = with pkgs; [
     glfw
     glibc.static
+    glm
     libGL
     libcxx
     libgcc
@@ -38,6 +39,7 @@ in
   };
 
   environment.variables = {
+    OPENGL_INCLUDE_DIR = pkgs.mesa;
     OPENSSL_DEV = pkgs.openssl.dev;
     PKG_CONFIG_PATH = "\$PKG_CONFIG_PATH:${pkgs.openssl.dev}/lib/pkgconfig";
   };
