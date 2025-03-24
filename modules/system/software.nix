@@ -9,6 +9,7 @@ let
     libiconv
     libxkbcommon
     libz
+    mesa
     openssl
     postgresql.lib
     raylib
