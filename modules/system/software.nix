@@ -3,7 +3,7 @@ let
   libraries = with pkgs; [
     glfw
     glibc.static
-    kdePackages.wayland-protocols
+    libGL
     libcxx
     libgcc
     libiconv
@@ -15,9 +15,12 @@ let
     stdenv.cc.cc.lib
     wayland
     waylandpp
-    wlr-protocols
     xorg.libX11
     xorg.libX11.dev
+    xorg.libXcursor
+    xorg.libXi
+    xorg.libXinerama
+    xorg.libXrandr
     zlib
   ];
 in
