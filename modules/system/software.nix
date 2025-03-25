@@ -210,6 +210,7 @@ in
       ripgrep
       rose-pine-cursor
       rose-pine-hyprcursor
+      rstudio
       rsync
       rustup
       sfxr
@@ -223,6 +224,8 @@ in
       system-config-printer
       terraform
       texliveFull
+      texmaker
+      texstudio
       thc-hydra
       thunderbird
       tldr
