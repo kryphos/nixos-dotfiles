@@ -13,8 +13,8 @@
       experimental-features = [ "nix-command flakes" ];
       auto-optimise-store = true;
       allowed-users = [ "luca" ];
-      max-jobs = 16;
-      download-buffer-size = 1000000000;
+      max-jobs = 32;
+      download-buffer-size = 1000000000000;
     };
     gc = {
       automatic = true;
