@@ -213,6 +213,7 @@ in
       rsync
       rustup
       sfxr
+      slowlorust
       slurp
       sox
       sqlite
