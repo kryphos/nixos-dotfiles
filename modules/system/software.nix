@@ -2,7 +2,9 @@
 let
   libraries = with pkgs; [
     clang
+    clangMultiStdenv
     gcc
+    gccMultiStdenv
     glfw
     glibc
     glibc.static
