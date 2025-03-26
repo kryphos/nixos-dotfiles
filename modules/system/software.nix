@@ -1,8 +1,11 @@
 { pkgs, spicetify-nix, ... }:
 let
   libraries = with pkgs; [
+    clang
+    gcc
     glfw
     glibc.static
+    glibc_multi
     glm
     libGL
     libGLU
@@ -12,6 +15,7 @@ let
     libxkbcommon
     libz
     mesa
+    musl
     openssl
     postgresql.lib
     raylib
@@ -77,7 +81,6 @@ in
       cargo-shuttle
       cargo-watch
       cgdb
-      clang
       clang-tools
       cloc
       cmake
@@ -111,7 +114,6 @@ in
       fzf
       gamemode
       gamescope
-      gcc
       gdb
       gf
       ghidra
@@ -325,9 +327,9 @@ in
     };
     zsh = {
       enable = true;
-      shellInit = ''
-        export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${pkgs.lib.makeLibraryPath libraries}"
-      '';
+      # shellInit = ''
+      #   export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${pkgs.lib.makeLibraryPath libraries}"
+      # '';
       ohMyZsh = {
         enable = true;
         plugins = [
