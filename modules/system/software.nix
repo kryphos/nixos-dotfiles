@@ -4,6 +4,7 @@ let
     clang
     gcc
     glfw
+    glibc
     glibc.static
     glibc_multi
     glm
@@ -15,7 +16,6 @@ let
     libxkbcommon
     libz
     mesa
-    musl
     openssl
     postgresql.lib
     raylib
