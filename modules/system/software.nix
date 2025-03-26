@@ -327,9 +327,9 @@ in
     };
     zsh = {
       enable = true;
-      # shellInit = ''
-      #   export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${pkgs.lib.makeLibraryPath libraries}"
-      # '';
+      shellInit = ''
+        export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${pkgs.lib.makeLibraryPath libraries}"
+      '';
       ohMyZsh = {
         enable = true;
         plugins = [
